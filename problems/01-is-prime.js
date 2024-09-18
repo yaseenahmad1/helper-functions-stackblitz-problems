@@ -9,13 +9,24 @@ isPrime(10) should be false because it is divisible by the integers 10, 1, 5,
 and 2 (10 / 5 = 2 and 10 / 1 = 10).
 */
 
-// Your code here 
+let isPrime = function(num) {
+    if (num < 2) { //essentially this is saying that if num is 1 or 0 it is not a prime so return a false boolean. 
+        return false; 
+    }
 
-// console.log(isPrime(2)); // => true
-// console.log(isPrime(10)); // => false
-// console.log(isPrime(11)); // => true
-// console.log(isPrime(9)); // => false
-// console.log(isPrime(2017)); // => true
+    for (let i = 2; i < num; i++) { 
+        if (num % i ===  0) {
+            return false; 
+        }
+    }
+    return true; 
+}
+
+console.log(isPrime(2)); // => true
+console.log(isPrime(10)); // => false
+console.log(isPrime(11)); // => true
+console.log(isPrime(9)); // => false
+console.log(isPrime(2017)); // => true
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = isPrime;
